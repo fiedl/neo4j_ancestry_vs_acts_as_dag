@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',        group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',      group: :development
+# gem 'spring',      group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -32,6 +32,8 @@ gem 'spring',      group: :development
 gem 'rspec-rails', '~> 3.0.0'
 gem 'fuubar'
 gem 'pry'
+gem  'colored'
+gem 'table-formatter'
 
 gem 'acts-as-dag'
 gem 'neo4j_ancestry', path: '../neo4j_ancestry'
