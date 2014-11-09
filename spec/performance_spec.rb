@@ -1,38 +1,40 @@
 require 'rails_helper'
 
-describe "performance" do
+describe "performance: " do
   
-  $number_of_groups = 10
-  let(:groups) { (1..$number_of_groups).map { |n| Group.create(name: "Group #{n}") } }
-  let(:parent_group) { Group.create name: "Parent Group" }
-  let(:ancestor_group) { Group.create name: "Ancestor Group" }
+  $number_of_groups = 100
+  $number_of_users = 10
   
   before :each do
     Neo4jDatabase.clear :yes_i_am_sure
   end
   
+  let(:groups) { (1..$number_of_groups).map { |n| Group.create(name: "Group #{n}") } }
+  let(:parent_group) { Group.create name: "Parent Group" }
+  let(:ancestor_group) { Group.create name: "Ancestor Group" }
+  
   specify "creating #{$number_of_groups} groups" do
     benchmark do
-      groups.to_a
+      groups
     end
     groups.count.should == $number_of_groups
   end
   
-  specify "adding 10 users to each of the #{$number_of_groups} groups" do
+  specify "adding #{$number_of_users} users to each of the #{$number_of_groups} groups" do
     benchmark do
       groups.each do |group|
-        (1..10).each { |n| group.child_users.create }
+        (1..$number_of_users).each { |n| group.child_users.create }
       end
     end
-    groups.last.child_users.count.should == 10
+    groups.last.child_users.count.should == $number_of_users
   end
   
   describe "with child users" do
   
     before do
-      # create 10 users per group
+      # create $number_of_users users per group
       groups.each do |group|
-        (1..10).each { |n| group.child_users.create }
+        (1..$number_of_users).each { |n| group.child_users.create }
       end
     end
     
@@ -105,6 +107,10 @@ describe "performance" do
   
   def print_results
     print "\n\n## Results for #{ENV['BACKEND']}\n\n".blue.bold
+    
+    print "$number_of_groups = #{$number_of_groups}\n".blue
+    print "$number_of_users  = #{$number_of_users}\n\n".blue
+    
     print results_table.blue.bold
   end
   def results_table
