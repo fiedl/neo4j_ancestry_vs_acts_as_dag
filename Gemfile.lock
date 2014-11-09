@@ -1,5 +1,6 @@
-PATH
-  remote: ../neo4j_ancestry
+GIT
+  remote: git://github.com/fiedl/neo4j_ancestry.git
+  revision: d8c2575f143da62bc163b3f502ea1f010e832a67
   specs:
     neo4j_ancestry (0.0.3.alpha)
       neography (>= 1.6.0)

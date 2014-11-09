@@ -36,4 +36,4 @@ gem  'colored'
 gem 'table-formatter'
 
 gem 'acts-as-dag'
-gem 'neo4j_ancestry', path: '../neo4j_ancestry'
+gem 'neo4j_ancestry', github: 'fiedl/neo4j_ancestry'
