@@ -80,7 +80,20 @@ See [spec/performance_spec.rb](spec/performance_spec.rb).
 
 ## Results on Travis
 
+https://travis-ci.org/fiedl/neo4j_ancestry_vs_acts_as_dag
+
 ## Running the Tests Locally
+
+```
+git clone git@github.com:fiedl/neo4j_ancestry_vs_acts_as_dag.git
+cd neo4j_ancestry_vs_acts_as_dag
+
+# modify config/database.yml to match your local mysql configuration
+
+bundle exec rake neo4j:install neo4j:get_spatial neo4j:setup neo4j:start
+bundle exec rake db:create db:migrate
+bundle exec rake
+```
 
 ## Author
 
