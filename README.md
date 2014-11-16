@@ -38,6 +38,7 @@ See [spec/performance_spec.rb](spec/performance_spec.rb).
     | removing the link to the ancestor group            | 2.833114 s  |
     | destroying the ancestor group                      | 0.000709 s  |
     | finding all descendants                            | 0.021831 s  |
+    | finding all descendant users                       | 0.000469 s  |
     --------------------------------------------------------------------
 
 ### Results for neo4j_ancestry
@@ -55,6 +56,7 @@ See [spec/performance_spec.rb](spec/performance_spec.rb).
     | removing the link to the ancestor group            | 0.148153 s   |
     | destroying the ancestor group                      | 0.071543 s   |
     | finding all descendants                            | 0.616196 s   |
+    | finding all descendant users                       | 0.172308 s   |
     ---------------------------------------------------------------------
 
 ### Remarks
@@ -92,7 +94,8 @@ cd neo4j_ancestry_vs_acts_as_dag
 
 bundle exec rake neo4j:install neo4j:get_spatial neo4j:setup neo4j:start
 bundle exec rake db:create db:migrate
-bundle exec rake
+BACKEND=acts-as-dag bundle exec rake
+BACKEND=neo4j_ancestry bundle exec rake
 ```
 
 ## Author

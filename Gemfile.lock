@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/fiedl/neo4j_ancestry.git
-  revision: d8c2575f143da62bc163b3f502ea1f010e832a67
+  revision: b6cbf3dc621a6968f37fd8f30e021064eceff639
   specs:
     neo4j_ancestry (0.0.3.alpha)
       neography (>= 1.6.0)

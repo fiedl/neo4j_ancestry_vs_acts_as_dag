@@ -84,6 +84,13 @@ describe "performance: " do
           end
           ancestor_group.descendants.count.should > $number_of_groups
         end
+        
+        specify "finding all descendant users" do
+          benchmark do
+            ancestor_group.descendant_users
+          end
+          ancestor_group.descendant_users.count.should > $number_of_groups
+        end
       end
     end
   end
