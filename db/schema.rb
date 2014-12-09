@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109184657) do
+ActiveRecord::Schema.define(version: 20141202140522) do
 
   create_table "dag_links", force: true do |t|
     t.integer  "ancestor_id"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20141109184657) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "dag_links", ["ancestor_id", "ancestor_type", "direct"], name: "dag_ancestor", using: :btree
+  add_index "dag_links", ["descendant_id", "descendant_type"], name: "dag_descendant", using: :btree
 
   create_table "groups", force: true do |t|
     t.string   "name"
