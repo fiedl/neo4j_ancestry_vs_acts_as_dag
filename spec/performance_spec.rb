@@ -5,8 +5,10 @@ describe "performance: " do
   $number_of_groups = 100
   $number_of_users = 10
   
-  before :each do
-    Neo4jDatabase.clear :yes_i_am_sure
+  if ENV['BACKEND'] == 'neo4j_ancestry'
+    before :each do
+      Neo4jDatabase.clear :yes_i_am_sure
+    end
   end
   
   let(:groups) { (1..$number_of_groups).map { |n| Group.create(name: "Group #{n}") } }
