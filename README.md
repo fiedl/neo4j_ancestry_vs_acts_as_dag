@@ -27,18 +27,18 @@ See [spec/performance_spec.rb](spec/performance_spec.rb).
 
     $number_of_groups = 100
     $number_of_users  = 10
-
+    
     --------------------------------------------------------------------
     | Description                                        | Duration    |
     --------------------------------------------------------------------
-    | creating 100 groups                                | 0.107389 s  |
-    | adding 10 users to each of the 100 groups          | 5.498063 s  |
-    | moving 100 groups into a parent group              | 6.036887 s  |
-    | moving the group structure into an ancestor group  | 7.658171 s  |
-    | removing the link to the ancestor group            | 2.833114 s  |
-    | destroying the ancestor group                      | 0.000709 s  |
-    | finding all descendants                            | 0.021831 s  |
-    | finding all descendant users                       | 0.000469 s  |
+    | creating 100 groups                                | 0.120807 s  |
+    | adding 10 users to each of the 100 groups          | 5.208326 s  |
+    | moving 100 groups into a parent group              | 4.172726 s  |
+    | moving the group structure into an ancestor group  | 4.150828 s  |
+    | removing the link to the ancestor group            | 1.662111 s  |
+    | destroying the ancestor group                      | 0.000717 s  |
+    | finding all descendants                            | 0.028424 s  |
+    | finding all descendant users                       | 0.000439 s  |
     --------------------------------------------------------------------
 
 ### Results for neo4j_ancestry
