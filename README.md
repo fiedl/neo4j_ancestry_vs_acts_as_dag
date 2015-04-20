@@ -61,6 +61,8 @@ See [spec/performance_spec.rb](spec/performance_spec.rb).
 
 ### Results for neo4j and has_neo_node
 
+See: https://github.com/fiedl/neo4j_gem_test
+
     $number_of_groups = 100
     $number_of_users  = 10
     
@@ -76,6 +78,8 @@ See [spec/performance_spec.rb](spec/performance_spec.rb).
     | finding all descendants                            | 0.4834235 s  |
     | finding all descendant users                       | 0.0955578 s  |
     ---------------------------------------------------------------------
+    
+
 
 ### Remarks
 
