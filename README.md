@@ -59,6 +59,24 @@ See [spec/performance_spec.rb](spec/performance_spec.rb).
     | finding all descendant users                       | 0.172308 s   |
     ---------------------------------------------------------------------
 
+### Results for neo4j and has_neo_node
+
+    $number_of_groups = 100
+    $number_of_users  = 10
+    
+    ---------------------------------------------------------------------
+    | Description                                        | Duration     |
+    ---------------------------------------------------------------------
+    | creating 100 groups                                | 2.4675473 s  |
+    | adding 10 users to each of the 100 groups          | 25.227630 s  |
+    | moving 100 groups into a parent group              | 0.1612957 s  |
+    | moving the group structure into an ancestor group  | 0.0259047 s  |
+    | removing the link to the ancestor group            | 0.0663939 s  |
+    | destroying the ancestor group                      | 0.0182183 s  |
+    | finding all descendants                            | 0.4834235 s  |
+    | finding all descendant users                       | 0.0955578 s  |
+    ---------------------------------------------------------------------
+
 ### Remarks
 
 #### Contra Neo4j
